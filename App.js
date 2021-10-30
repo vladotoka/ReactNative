@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, SafeAreaView } from 'react-native';
 import * as Font from 'expo-font';
 // import  AppLoading from 'expo-app-loading';
-import  AppLoading from 'expo-app-loading';
+import AppLoading from 'expo-app-loading';
 
 import Header from './components/Header';
 import StartGameScreen from './screens/StartGameScreen';
@@ -35,7 +35,7 @@ export default function App() {
       <AppLoading
         startAsync={fetchFonts}
         onFinish={() => setDataLoaded(true)}
-        onError={err => console.log(err)}
+        onError={(err) => console.log(err)}
       />
     );
   }
@@ -68,12 +68,21 @@ export default function App() {
       />
     );
   }
+  //TEMP game over fixing
+  content = (
+    <GameOverScreen
+      roundsNumber={42}
+      userNumber={42}
+      onRestart={configureNewGamehandler}
+    />
+  );
 
   return (
-    <View style={styles.screen}>
-      <Header title="Отгатни Число :)" />
-      {content}
-    </View>
+    
+    <SafeAreaView style={styles.screen}>
+        <Header title="Отгатни Число :)" />
+        {content}
+    </SafeAreaView>
   );
 }
 

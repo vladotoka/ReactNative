@@ -6,7 +6,6 @@ import {
   Image,
   Dimensions,
   ScrollView,
-  SafeAreaView,
 } from 'react-native';
 
 import Colors from '../constants/colors';
@@ -16,7 +15,6 @@ import MainButton from '../components/MainButton';
 
 const GameOverScreen = (props) => {
   return (
-    <SafeAreaView>
       <ScrollView>
         <View style={styles.screen}>
           <TitleText>Край на Играта!</TitleText>
@@ -38,10 +36,9 @@ const GameOverScreen = (props) => {
               то е <Text style={styles.highlight}>{props.userNumber}</Text> :)
             </BodyText>
           </View>
-          <MainButton title="Нова игра" onPress={props.onRestart} />
+          <MainButton title="Нова играа" onPress={props.onRestart} />
         </View>
       </ScrollView>
-    </SafeAreaView>
   );
 };
 
