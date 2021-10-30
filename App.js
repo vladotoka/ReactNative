@@ -68,14 +68,6 @@ export default function App() {
       />
     );
   }
-  //TEMP game over fixing
-  content = (
-    <GameOverScreen
-      roundsNumber={42}
-      userNumber={42}
-      onRestart={configureNewGamehandler}
-    />
-  );
 
   return (
     
